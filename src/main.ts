@@ -160,6 +160,42 @@ const user1 = new User("tornike", "kapanadze")
 
 console.log(user1.name)
 
+abstract class Car {
+ 
+  model: string
+  year: number
+  color: string
+  speed: number
+
+  constructor( model: string, year: number, color: string, speed: number){
+    this.model = model
+    this.year = year
+    this.color = color
+    this.speed = speed
+  }
+
+  start(): void {
+    
+  };
+  stop(): void {
+    
+  }
+}
+
+class Mercedes extends Car {
+  start(): void {
+    console.log(`starting ${this.model}`)
+  }
+
+  stop(): void {
+    console.log(`stopping ${this.model}`)
+  }
+}
+
+const eClass = new Mercedes("E-class", 2001, "white", 320)
+
+eClass.start()
+
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 <h1>hello</h1>
